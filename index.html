@@ -1,156 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anshi Mishra - Resume</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .resume-container {
-            max-width: 8.5in;
-            min-height: 11in;
-            margin: 0 auto;
-            background-color: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-        .section-title {
-            border-bottom: 2px solid #4a5568;
-            padding-bottom: 4px;
-            margin-bottom: 16px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #2d3748;
-        }
-        .item-title {
-            font-weight: 600;
-            color: #2d3748;
-        }
-        .item-subtitle {
-            font-weight: 500;
-            color: #4a5568;
-        }
-        .date-location {
-            color: #718096;
-            font-size: 0.875rem;
-        }
-        .skill-tag {
-            background-color: #edf2f7;
-            color: #4a5568;
-            padding: 4px 12px;
-            border-radius: 16px;
-            font-size: 0.875rem;
-            font-weight: 500;
-        }
-        .contact-icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 8px;
-            vertical-align: middle;
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Anshi Mishra - Resume</title>
+<style>
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  strong {
+    font-weight: 600;
+  }
+  b {
+    font-weight: 600;
+  }
+  /* Container wrapper */
+  .container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    width: 900px;
+    max-width: 95vw;
+    margin: 20px auto;
+    box-shadow: 0 0 30px rgb(0 0 0 / 0.1);
+  }
+  /* Left Sidebar */
+  .left {
+    background-color: #c88f89;
+    color: #1c2d27;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px 40px 30px;
+    gap: 15px;
+  }
+  .left h1 {
+    font-weight: 900;
+    font-size: 1.8rem;
+    margin: 0 0 22px 0;
+    line-height: 1.1;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #eeeaea;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .icon-sprite {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    color: #eeeaea;
+    flex-shrink: 0;
+  }
+
+  /* Icons style */
+  svg.icon {
+    fill: none;
+    stroke: #eeeaea;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Left bottom area */
+  .left-bottom {
+    background: #ead5d1;
+    color: #4a4747;
+    flex-grow: 1;
+    padding: 35px 30px;
+    font-size: 0.9rem;
+  }
+  .left-bottom h3 {
+    margin-top: 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #575353;
+  }
+  .education-section p,
+  .education-section strong {
+    margin: 2px 0 7px 0;
+  }
+  .education-section strong {
+    display: inline-block;
+    font-weight: 700;
+  }
+
+  /* Right side content */
+  .right {
+    background-color: #f7ede8;
+    color: #3c3a39;
+    padding: 40px 50px 40px 40px;
+    flex-grow: 1;
+  }
+  .right h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .career-objective-text {
+    font-weight: 400;
+    font-size: 0.9rem;
+    max-width: 100%;
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 18px;
+    color: #333;
+  }
+
+  /* Websites and Projects */
+  .section {
+    margin-bottom: 25px;
+  }
+  .section ul {
+    list-style: disc inside;
+    padding-left: 12px;
+    margin: 4px 0 10px 0;
+    font-size: 0.9rem;
+  }
+  .section ul li {
+    margin-bottom: 6px;
+  }
+  /* Projects text */
+  .project-item {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+  .project-item b {
+    display: inline-block;
+    margin-bottom: 3px;
+  }
+
+  /* TECHNICAL SKILLS */
+  .tech-skills p {
+    margin: 0 0 7px 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.01em;
+  }
+  /* LANGUAGES section */
+  .languages-section {
+    margin-top: 10px;
+  }
+  .languages-section b {
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.03em;
+    margin-bottom: 15px;
+    display: block;
+  }
+  .language-labels {
+    display: flex;
+    gap: 15px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+  .language-bars {
+    display: flex;
+    gap: 8px;
+  }
+  /* language bar blocks, 6 blocks for each language */
+  .lang-block {
+    width: 18px;
+    height: 11px;
+    background-color: #d9cfcf;
+    border-radius: 2px;
+  }
+  .lang-block.active {
+    background-color: #9d453d;
+  }
+  /* Labels below bars */
+  .language-proficiency {
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 65px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #504d4d;
+    margin-top: 4px;
+  }
+  /* Responsive tweaks */
+  @media(max-width: 790px) {
+    .container {
+      flex-direction: column;
+      width: 92vw;
+    }
+    .left {
+      width: 100%;
+      flex-direction: row;
+      padding: 20px 15px;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+    .left h1 {
+      flex-basis: 100%;
+      font-size: 1.5rem;
+    }
+    .contact-item {
+      font-size: 0.85rem;
+      flex-basis: 100%;
+    }
+    .left-bottom {
+      width: 100%;
+      padding: 25px 20px;
+      font-size: 0.85rem;
+    }
+    .right {
+      padding: 25px 20px;
+    }
+  }
+</style>
 </head>
-<body class="p-4 sm:p-8">
-    <div class="resume-container p-6 sm:p-10">
-        <!-- Header Section -->
-        <header class="text-center mb-10">
-            <h1 class="text-4xl sm:text-5xl font-bold text-gray-800 tracking-tight">Anshi Mishra</h1>
-            <p class="text-lg sm:text-xl text-gray-600 mt-2">Aspiring Data Scientist | AI & ML Enthusiast</p>
-            <div class="flex justify-center items-center flex-wrap mt-4 gap-x-4 gap-y-2 text-gray-600 text-sm">
-                <a href="mailto:anshimishra205@email.com" class="hover:text-blue-600 flex items-center">
-                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                    anshimishra205@email.com
-                </a>
-                <span class="hidden sm:inline">|</span>
-                <a href="#" class="hover:text-blue-600 flex items-center">
-                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-                    +91 9555515456
-                </a>
-                <span class="hidden sm:inline">|</span>
-                 <a href="#" class="hover:text-blue-600 flex items-center">
-                    <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                    Kanpur, Uttar Pradesh
-                </a>
-                <span class="hidden sm:inline">|</span>
-                <a href="https://github.com/anshi282" target="_blank" class="hover:text-blue-600 flex items-center">
-                     <svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-                    github.com/anshi282
-                </a>
-            </div>
-        </header>
+<body>
+  <div class="container" role="main" aria-label="Anshi Mishra Resume">
+    <!-- Left Panel -->
+    <aside class="left" aria-label="Contact and education">
+      <h1 tabindex="0">ANSHI<br />MISHRA</h1>
+      <address>
+        <p class="contact-item">
+          <svg aria-hidden="true" class="icon icon-envelope icon-sprite" viewBox="0 0 24 24" role="img" focusable="false" >
+            <path d="M4 4h16v16H4z" stroke="none" fill="none"/>
+            <polyline points="22,6 12,13 2,6" />
+            <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+          </svg>
+          <span>anshimishra205@email.com</span>
+        </p>
+        <p class="contact-item">
+          <svg aria-hidden="true" class="icon icon-phone icon-sprite" viewBox="0 0 24 24" role="img" focusable="false">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07
+                     19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.66A2
+                     2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72
+                     13.05 13.05 0 0 0 .7 2.81 2 2 0 0 1-.45
+                     2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2
+                     2 0 0 1 2.11-.45c.84.35 1.6.64 2.81.7A2 2 0 0
+                     1 22 16.92z" fill="none" stroke="#eeeaea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span>+91 9555515456</span>
+        </p>
+        <p class="contact-item">
+          <svg aria-hidden="true" class="icon icon-location icon-sprite" viewBox="0 0 24 24" role="img" focusable="false">
+            <circle cx="12" cy="10" r="3" />
+            <path d="M12 21c-4 0-8-6-8-11a8 8 0 0 1 16 0c0 5-4
+            11-8 11z" fill="none" stroke="#eeeaea" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <span>Kanpur, Uttar Pradesh 208001</span>
+        </p>
+      </address>
 
-        <main class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <!-- Left Column -->
-            <div class="md:col-span-2">
-                <!-- Career Objective -->
-                <section>
-                    <h2 class="section-title">Career Objective</h2>
-                    <p class="text-gray-700 leading-relaxed">
-                        A highly motivated Computer Science student with a strong passion for Data Analysis, Machine Learning, and Generative AI. Proficient in Python and its data science libraries, with hands-on experience in developing ML models and data-driven applications. Seeking an entry-level role to apply my analytical and problem-solving skills to real-world challenges and contribute to data-centric projects.
-                    </p>
-                </section>
+      <div class="left-bottom" aria-label="Education">
+        <h3>EDUCATION</h3>
+        <div class="education-section" tabindex="0">
+          <p><b>Kanpur Institute Of Technology</b></p>
+          <p>Kanpur &middot; Expected in 01/2027</p>
+          <p><em>B.Tech</em>: Computer Science<br/>Expected Graduation: 2027</p>
+        </div>
+      </div>
+    </aside>
+    <!-- Right Panel -->
+    <section class="right" aria-label="Professional information">
+      <div class="career-objective-section section">
+        <h2>CAREER OBJECTIVE</h2>
+        <p class="career-objective-text" tabindex="0">
+          A highly motivated Computer Science student with a strong passion for Data Analysis, Machine Learning, and Generative AI. Proficient in Python and its data science libraries, with hands-on experience in developing ML models and data-driven applications. Seeking an entry-level role to apply my analytical and problem-solving skills to real-world challenges and contribute to data-centric projects.
+        </p>
+      </div>
 
-                <!-- Projects -->
-                <section class="mt-8">
-                    <h2 class="section-title">Projects</h2>
-                    <div class="mb-6">
-                        <h3 class="item-title text-lg">Sales Data Visualization</h3>
-                        <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-                            <li>Developed Python scripts to clean and process sales data, creating visual reports to better understand seasonal patterns and customer behavior.</li>
-                        </ul>
-                    </div>
-                    <div class="mb-6">
-                        <h3 class="item-title text-lg">Weather Data Dashboard</h3>
-                        <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-                            <li>Built a mini-dashboard with Python for visualizing weather data, including temperature trends and rainfall patterns.</li>
-                        </ul>
-                    </div>
-                     <div class="mb-6">
-                        <h3 class="item-title text-lg">Generative AI Chatbot</h3>
-                        <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
-                            <li>Created a conversational chatbot prototype leveraging Large Language Models and prompt engineering for personalized responses.</li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
+      <div class="websites-section section">
+        <h2>WEBSITES, PORTFOLIOS, PROFILES</h2>
+        <ul tabindex="0" aria-label="GitHub profile link">
+          <li>github.com/anshi282</li>
+        </ul>
+      </div>
 
-            <!-- Right Column -->
-            <div>
-                <!-- Education -->
-                <section>
-                    <h2 class="section-title">Education</h2>
-                    <div>
-                        <h3 class="item-title">B.Tech in Computer Science</h3>
-                        <p class="item-subtitle">Kanpur Institute Of Technology, Kanpur</p>
-                        <p class="date-location">Expected Graduation: 2027</p>
-                    </div>
-                </section>
+      <div class="projects-section section">
+        <h2>PROJECTS</h2>
 
-                <!-- Skills -->
-                <section class="mt-8">
-                    <h2 class="section-title">Skills</h2>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">Matplotlib</span>
-                        <span class="skill-tag">Supervised ML</span>
-                        <span class="skill-tag">Unsupervised ML</span>
-                        <span class="skill-tag">MLOps</span>
-                        <span class="skill-tag">PyTorch</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Sentiment Analysis</span>
-                        <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">LLMs</span>
-                    </div>
-                </section>
-            </div>
-        </main>
-    </div>
+        <div class="project-item" tabindex="0">
+          <b>Job Recommender:</b><br />
+          Created a recommendation system that matches candidates with suitable job opportunities using ML algorithms. Optimized filtering based on skills, preferences, and market trends to improve career alignment.
+        </div>
+        <div class="project-item" tabindex="0">
+          <b>Medical Chatbot:</b><br />
+          Integrated a user-friendly interface with accurate query handling to enhance accessibility of healthcare information.
+        </div>
+        <div class="project-item" tabindex="0">
+          <b>Weather Dashboard:</b><br />
+          Implemented location-based search and dynamic UI for seamless user experience and insights.
+        </div>
+        <div class="project-item" tabindex="0">
+          <b>Sales Data Visualization:</b><br />
+          Designed an analytical dashboard to visualize large-scale sales data for trend and performance insights.
+        </div>
+      </div>
+
+      <div class="tech-skills section" tabindex="0">
+        <h2>TECHNICAL SKILLS</h2>
+        <p>Programming Language: Python</p>
+        <p>Framework: NumPy, Pandas, Matplotlib, scikit-learn.</p>
+        <p>Database Management: SQL</p>
+        <p>Machine Learning : PyTorch, GenAi, Deep Learning.</p>
+      </div>
+
+      <div class="languages-section" tabindex="0">
+        <h2>LANGUAGES</h2>
+        <div class="language-labels" aria-label="Language names">
+          <div>English:</div>
+          <div>Hindi:</div>
+        </div>
+        <div class="language-bars" aria-label="English language proficiency">
+          <div class="lang-block active" aria-hidden="true"></div>
+          <div class="lang-block" aria-hidden="true"></div>
+          <div class="lang-block" aria-hidden="true"></div>
+          <div class="lang-block" aria-hidden="true"></div>
+          <div class="lang-block" aria-hidden="true"></div>
+          <div class="lang-block" aria-hidden="true"></div>
+        </div>
+        <div class="language-bars" aria-label="Hindi language proficiency" style="margin-top: 4px;">
+          <div class="lang-block active" aria-hidden="true"></div>
+          <div class="lang-block active" aria-hidden="true"></div>
+          <div class="lang-block active" aria-hidden="true"></div>
+          <div class="lang-block active" aria-hidden="true"></div>
+          <div class="lang-block active" aria-hidden="true"></div>
+          <div class="lang-block active" aria-hidden="true"></div>
+        </div>
+        <div class="language-proficiency" aria-label="Language proficiency labels">
+          <div>Beginner (A1)</div>
+          <div>Advanced (C1)</div>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 </html>
+
